@@ -23,6 +23,7 @@
             android:gravity="center"
             android:background="@drawable/button_stroke_black95_press_white"
             android:layout_gravity="end"
+            android:textColor="@color/black60"
             />
     </LinearLayout>
 
