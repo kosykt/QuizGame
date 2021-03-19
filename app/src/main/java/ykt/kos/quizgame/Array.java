@@ -2,6 +2,7 @@ package ykt.kos.quizgame;
 
 public class Array {
 
+    //массив для первого уровня
     final int[] images1 = {
             R.drawable.onelevel_zero,
             R.drawable.onelevel_one,
