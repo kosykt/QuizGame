@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -130,6 +131,29 @@ public class Level1 extends AppCompatActivity {
         //цикл не допускающий равенство чисел - конец
         img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
         text_right.setText(array.text1[numRight]);//достать из массива текст
+
+        //обработать нажатие на левую картинку - начало
+        img_left.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //условие касания картинки - начало
+                if (event.getAction() == MotionEvent.ACTION_DOWN){
+                    //если коснутся картинки - начало
+                    img_right.setEnabled(false);//блокирование правой картинки
+                    if (numLeft > numRight){
+                        img_left.setImageResource(R.drawable.img_true);
+                    }else {
+                        img_left.setImageResource(R.drawable.img_false);
+                    }
+                    //если коснутся картинки - конец
+                }else if (event.getAction() == MotionEvent.ACTION_UP){
+                    //если отпустил палец - начало
+                }
+                //условие касания картинки - конец
+                return true;
+            }
+        });
+        //обработать нажатие на левую картинку - конец
     }
     //системная кнопка НАЗАД - начало
     @Override
