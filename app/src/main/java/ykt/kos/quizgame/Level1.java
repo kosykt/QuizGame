@@ -14,9 +14,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Level1 extends AppCompatActivity {
 
     Dialog dialog;
+
+    public int numLeft;
+    public int numRight;
+    Array array = new Array();
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,9 @@ public class Level1 extends AppCompatActivity {
 
         final ImageView img_right = (ImageView)findViewById(R.id.img_right);
         img_right.setClipToOutline(true);
+
+        final TextView text_left = findViewById(R.id.text_left);
+        final TextView text_right = findViewById(R.id.text_right);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -78,6 +88,18 @@ public class Level1 extends AppCompatActivity {
                 }
             }
         });
+
+        numLeft = random.nextInt(10);
+        img_left.setImageResource(array.images1[numLeft]);
+        text_left.setText(array.text1[numLeft]);
+
+        numRight = random.nextInt(10);
+        while (numRight == numLeft){
+            numRight = random.nextInt(10);
+        }
+        img_right.setImageResource(array.images1[numRight]);
+        text_right.setText(array.text1[numRight]);
+
     }
     @Override
     public void onBackPressed(){
