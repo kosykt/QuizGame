@@ -124,7 +124,7 @@
                     android:background="@drawable/style_points"
                     />
                 <TextView
-                    android:id="@+id/points9"
+                    android:id="@+id/point9"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
@@ -194,7 +194,7 @@
                     android:background="@drawable/style_points"
                     />
                 <TextView
-                    android:id="@+id/points19"
+                    android:id="@+id/point19"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
