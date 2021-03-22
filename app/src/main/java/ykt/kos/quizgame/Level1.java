@@ -141,7 +141,7 @@ public class Level1 extends AppCompatActivity {
         img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
         text_right.setText(array.text1[numRight]);//достать из массива текст
 
-        //обработать нажатие на левую картинку - начало
+        //обработать нажатие на ЛеВЕЮ картинку - начало
         img_left.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -223,6 +223,89 @@ public class Level1 extends AppCompatActivity {
             }
         });
         //обработать нажатие на левую картинку - конец
+
+        //обработать нажатие на ПРАВУЮ картинку - начало
+        img_right.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //условие касания картинки - начало
+                if (event.getAction() == MotionEvent.ACTION_DOWN){
+                    //если коснутся картинки - начало
+                    img_left.setEnabled(false);//блокирование левой картинки
+                    if (numLeft < numRight){
+                        img_right.setImageResource(R.drawable.img_true);
+                    }else {
+                        img_right.setImageResource(R.drawable.img_false);
+                    }
+                    //если коснутся картинки - конец
+                }else if (event.getAction() == MotionEvent.ACTION_UP){
+                    //если отпустил палец - начало
+                    if (numLeft < numRight){
+                        //если правая картинка больше
+                        if (count < 20){
+                            count += 1;
+                        }
+                        // закрашивание ячеек в линии пргресса в серый - начало
+                        for (int i = 0; i < 20; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        // закрашивание ячеек в линии пргресса в серый - конец
+
+                        //определить правильный ответ и закрасить в зеленый - начало
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        //определить правильный ответ и закрасить в зеленый - конец
+                    }else {
+                        //если правая картинка меньше
+                        if (count > 0){
+                            if (count == 1){
+                                count = 0;
+                            }else {
+                                count = count - 2;
+                            }
+                        }
+                        // закрашивание ячеек в линии пргресса в серый - начало
+                        for (int i = 0; i < 19; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        // закрашивание ячеек в линии пргресса в серый - конец
+
+                        //определить правильный ответ и закрасить в зеленый - начало
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        //определить правильный ответ и закрасить в зеленый - конец
+                    }
+                    //если отпустил палец - конец
+                    if (count == 20){
+                        //выход из уровня
+                    }else {
+                        numLeft = random.nextInt(10); //генерация случайного числа от 0 до 10
+                        img_left.setImageResource(array.images1[numLeft]); //достать из массива картинку
+                        text_left.setText(array.text1[numLeft]); //достать из массива текст
+                        img_left.startAnimation(a);
+                        numRight = random.nextInt(10);//генерация случайного числа от 0 до 10
+                        //цикл не допускающий равенства чисел - начало
+                        while (numRight == numLeft){
+                            numRight = random.nextInt(10);
+                        }
+                        //цикл не допускающий равенство чисел - конец
+                        img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
+                        img_right.startAnimation(a);
+                        text_right.setText(array.text1[numRight]);//достать из массива текст
+                        img_left.setEnabled(true); //включаем обратно левую картинку
+                    }
+                }
+                //условие касания картинки - конец
+                return true;
+            }
+        });
+        //обработать нажатие на правую картинку - конец
     }
     //системная кнопка НАЗАД - начало
     @Override
