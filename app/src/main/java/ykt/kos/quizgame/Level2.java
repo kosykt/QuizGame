@@ -62,6 +62,19 @@ public class Level2 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон диалогового окна
         dialog.setCancelable(false); //окно нельзя закрыть кнопкой назад
 
+//___________________________________________________________________________
+        //установить картинку в диалоговое окно - начало
+        ImageView previewimg = (ImageView)dialog.findViewById(R.id.previewImg);
+        previewimg.setImageResource(R.drawable.previewimgtwo);
+        //установить картинку в диалоговое окно - конец
+
+        //устанавливаем описание задания - начало
+        TextView textdescription = (TextView)dialog.findViewById(R.id.textdescription);
+        textdescription.setText(R.string.leveltwo);
+        //устанавливаем описание задания - конец
+//_______________________________________________________________________________
+
+
         //закрыть диалоговое окно - начало
         TextView btnclose = (TextView)dialog.findViewById(R.id.buttonclose);
         btnclose.setOnClickListener(new View.OnClickListener() {
@@ -129,8 +142,8 @@ public class Level2 extends AppCompatActivity {
         //подключение анимации - конец
 
         numLeft = random.nextInt(10); //генерация случайного числа от 0 до 10
-        img_left.setImageResource(array.images1[numLeft]); //достать из массива картинку
-        text_left.setText(array.text1[numLeft]); //достать из массива текст
+        img_left.setImageResource(array.images2[numLeft]); //достать из массива картинку
+        text_left.setText(array.text2[numLeft]); //достать из массива текст
 
         numRight = random.nextInt(10);//генерация случайного числа от 0 до 10
         //цикл не допускающий равенства чисел - начало
@@ -138,8 +151,8 @@ public class Level2 extends AppCompatActivity {
             numRight = random.nextInt(10);
         }
         //цикл не допускающий равенство чисел - конец
-        img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
-        text_right.setText(array.text1[numRight]);//достать из массива текст
+        img_right.setImageResource(array.images2[numRight]);//достать из массива картинку
+        text_right.setText(array.text2[numRight]);//достать из массива текст
 
         //обработать нажатие на ЛеВЕЮ картинку - начало
         img_left.setOnTouchListener(new View.OnTouchListener() {
@@ -203,8 +216,8 @@ public class Level2 extends AppCompatActivity {
                         //выход из уровня
                     }else {
                         numLeft = random.nextInt(10); //генерация случайного числа от 0 до 10
-                        img_left.setImageResource(array.images1[numLeft]); //достать из массива картинку
-                        text_left.setText(array.text1[numLeft]); //достать из массива текст
+                        img_left.setImageResource(array.images2[numLeft]); //достать из массива картинку
+                        text_left.setText(array.text2[numLeft]); //достать из массива текст
                         img_left.startAnimation(a);
                         numRight = random.nextInt(10);//генерация случайного числа от 0 до 10
                         //цикл не допускающий равенства чисел - начало
@@ -212,9 +225,9 @@ public class Level2 extends AppCompatActivity {
                             numRight = random.nextInt(10);
                         }
                         //цикл не допускающий равенство чисел - конец
-                        img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
+                        img_right.setImageResource(array.images2[numRight]);//достать из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.text1[numRight]);//достать из массива текст
+                        text_right.setText(array.text2[numRight]);//достать из массива текст
                         img_right.setEnabled(true); //включаем обратно правую картинку
                     }
                 }
@@ -286,8 +299,8 @@ public class Level2 extends AppCompatActivity {
                         //выход из уровня
                     }else {
                         numLeft = random.nextInt(10); //генерация случайного числа от 0 до 10
-                        img_left.setImageResource(array.images1[numLeft]); //достать из массива картинку
-                        text_left.setText(array.text1[numLeft]); //достать из массива текст
+                        img_left.setImageResource(array.images2[numLeft]); //достать из массива картинку
+                        text_left.setText(array.text2[numLeft]); //достать из массива текст
                         img_left.startAnimation(a);
                         numRight = random.nextInt(10);//генерация случайного числа от 0 до 10
                         //цикл не допускающий равенства чисел - начало
@@ -295,9 +308,9 @@ public class Level2 extends AppCompatActivity {
                             numRight = random.nextInt(10);
                         }
                         //цикл не допускающий равенство чисел - конец
-                        img_right.setImageResource(array.images1[numRight]);//достать из массива картинку
+                        img_right.setImageResource(array.images2[numRight]);//достать из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.text1[numRight]);//достать из массива текст
+                        text_right.setText(array.text2[numRight]);//достать из массива текст
                         img_left.setEnabled(true); //включаем обратно левую картинку
                     }
                 }

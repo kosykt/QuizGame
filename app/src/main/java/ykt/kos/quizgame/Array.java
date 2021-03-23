@@ -2,7 +2,7 @@ package ykt.kos.quizgame;
 
 public class Array {
 
-    //массив для первого уровня
+    //массив для первого уровня - начало
     final int[] images1 = {
             R.drawable.onelevel_zero,
             R.drawable.onelevel_one,
@@ -28,4 +28,34 @@ public class Array {
             R.string.lvl1text8,
             R.string.lvl1text9
     };
+    //массив для первого уровня - конец
+
+    //массив для второго уровня - начало
+    final int[] images2 = {
+            R.drawable.twolevel_zero,
+            R.drawable.twolevel_one,
+            R.drawable.twolevel_two,
+            R.drawable.twolevel_three,
+            R.drawable.twolevel_four,
+            R.drawable.twolevel_five,
+            R.drawable.twolevel_six,
+            R.drawable.twolevel_seven,
+            R.drawable.twolevel_eight,
+            R.drawable.twolevel_nine
+    };
+
+    final int[] text2 = {
+            R.string.lvl2text0,
+            R.string.lvl2text1,
+            R.string.lvl2text2,
+            R.string.lvl2text3,
+            R.string.lvl2text4,
+            R.string.lvl2text5,
+            R.string.lvl2text6,
+            R.string.lvl2text7,
+            R.string.lvl2text8,
+            R.string.lvl2text9
+    };
+    //массив для второго уровня - конец
+
 }

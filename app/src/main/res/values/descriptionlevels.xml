@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="levelone">Выбери цифру, которая больше.\nВопросы могут повторяться, пока вы не наберете 20 очков.</string>
-    <string name="leveloneend">"Поздравляем, уровень пройден!"</string>
+    <string name="leveloneend">"Поздравляем, уровень 1 пройден!"</string>
+    <string name="leveltwo">Уровень 2</string>
 </resources>
