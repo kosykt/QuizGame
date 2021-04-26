@@ -11,14 +11,14 @@
     <string name="lvl1text8">Восемь</string>
     <string name="lvl1text9">Девять</string>
 
-    <string name="lvl2text0">2Ноль</string>
-    <string name="lvl2text1">2Один</string>
-    <string name="lvl2text2">2Два</string>
-    <string name="lvl2text3">2Три</string>
-    <string name="lvl2text4">2Четыре</string>
-    <string name="lvl2text5">2Пять</string>
-    <string name="lvl2text6">2Шесть</string>
-    <string name="lvl2text7">2Семь</string>
-    <string name="lvl2text8">2Восемь</string>
-    <string name="lvl2text9">2Девять</string>
+    <string name="lvl2text0">Ноль</string>
+    <string name="lvl2text1">Один</string>
+    <string name="lvl2text2">Два</string>
+    <string name="lvl2text3">Три</string>
+    <string name="lvl2text4">Четыре</string>
+    <string name="lvl2text5">Пять</string>
+    <string name="lvl2text6">Шесть</string>
+    <string name="lvl2text7">Семь</string>
+    <string name="lvl2text8">Восемь</string>
+    <string name="lvl2text9">Девять</string>
 </resources>
